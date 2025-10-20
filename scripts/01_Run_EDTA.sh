@@ -2,9 +2,9 @@
 
 #SBATCH --job-name=Run_EDTA
 #SBATCH --partition=pibu_el8
-#SBATCH --cpus-per-task=64
-#SBATCH --mem=128G
-#SBATCH --time=2-00:00:00
+#SBATCH --cpus-per-task=100
+#SBATCH --mem=500G
+#SBATCH --time=5-00:00:00
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err 
 
