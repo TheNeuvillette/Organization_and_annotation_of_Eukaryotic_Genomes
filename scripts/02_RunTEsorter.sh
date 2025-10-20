@@ -11,7 +11,7 @@
 WORKDIR=/data/users/jimhof/Organization_and_annotation_of_Eukaryotic_Genomes
 CONTAINER=/data/courses/assembly-annotation-course/CDS_annotation/containers/TEsorter_1.3.0.sif
 OUTDIR=$WORKDIR/results/02_TEsorter
-INPUT_FASTA=$WORKDIR/data/05_02_Hifiasm.bp.p_ctg.fa
+INPUT_FASTA=$WORKDIR/results/01_EDTA_annotation/Hifiasm.bp.p_ctg.fa.mod.EDTA.raw/Hifiasm.bp.p_ctg.fa.mod.LTR.raw.fa
 
 mkdir -p "$OUTDIR"
  cd "$OUTDIR" 
