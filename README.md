@@ -46,7 +46,7 @@ The workflow uses PacBio HiFi reads from accession Etna-2 for de novo genome ass
 
 ## 3. Orthology Based Gene Functional Annotation and Genome Comparisons
 
-### 3.1. Testing Sequence homology to functionally validated proteins 
+### 3.1. Testing Sequence Homology to Functionally Validated Proteins 
 - **`09_Run_Blast.sh`** - Run Blast to find sequence homology of predicted protein-coding genes to curated protein databases. 
 
 ### 3.2. Comparative Genomics
