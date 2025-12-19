@@ -6,7 +6,7 @@ The workflow uses PacBio HiFi reads from accession Etna-2 for de novo genome ass
 
 # Workflow Overview
 
-## 1. Transposable Element Annotation and Classification
+## 1. TE Annotation and Classification
 
 ### 1.1. TE Annotation using EDTA
 - **`01_Run_EDTA.sh`** - Runs EDTA on the assembly for TE annotation.
@@ -53,4 +53,22 @@ The workflow uses PacBio HiFi reads from accession Etna-2 for de novo genome ass
 - **`10_01_Genespace_Setup.sh`** - Creates BED and FASTA files containing the coordinates and peptide sequence for each gene. (Script coded and shared by Luis Ansorge (Github: luisansorge)).
 - **`10_02_Genespace.R`** - Runs GENESPACE to obtain orthogroup assignments, generates riparian plots, and others.
 - **`10_03_Run_Genespace.sh`** - Runs the Genespace.R script.
-- **`10_04_Process_Pangenome.R`** - Visualizes the pangenome compostion via multiple plots. (Section 6 of script coded and shared by Luis Ansorge (Github: luisansorge)).
+- **`10_04_Process_Pangenome.R`** - Visualizes the pangenome compostion via multiple plots. (Section 6 of script was coded and shared by Luis Ansorge (Github: luisansorge)).
+
+# Dependencies
+
+## Software, Tools
+
+- TE Annotation and Classification: EDTA (version 2.2), TEsorter (version 1.3.0), R (version 4.4.1), Samtools (version 1.19), SeqKit (version 2.6.1), BioPerl (version 1.7.8)
+- Annotation of Genes with the MAKER Pipeline: MAKER (version 3.01.03), OpenMPI (version 4.1.1), Augustus (version 3.4.0), UCSC-Utils (version 448-foss-2021a), MariaDB (version 10.6.4), InterProScan (version 5.70-102.0), BUSCO (version 5.4.2), AGAT (version 1.5.1)
+- Orthology Based Gene Functional Annotation and Genome Comparisons: BLAST+ (v2.15.0), GENESPACE
+
+### R Packages
+- tidyverse
+- data.table
+- cowplot
+- circlize
+- ComplexHeatmap
+- dplyr
+- reshape2
+- GENESPACE
