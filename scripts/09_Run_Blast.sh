@@ -9,21 +9,18 @@
 #SBATCH --error=logs/%x_%j.err
 
 
-# User-editable variables 
+# Paths and Variables:
 WORKDIR=/data/users/jimhof/Organization_and_annotation_of_Eukaryotic_Genomes
 INDIR=$WORKDIR/results/07_Filtering_Refining_Gene_Annotation
 OUTDIR=$WORKDIR/results/09_Blast
 MAKERBIN=/data/courses/assembly-annotation-course/CDS_annotation/softwares/Maker_v3.01.03/src/bin
 
-# Database paths
 UNIPROT_DB=/data/courses/assembly-annotation-course/CDS_annotation/data/uniprot/uniprot_viridiplantae_reviewed.fa
 TAIR10_DB=/data/courses/assembly-annotation-course/CDS_annotation/data/TAIR10_pep_20110103_representative_gene_model
 
-# filtered MAKER proteins and GFF3 input files
 maker_proteins_fasta=$INDIR/assembly.all.maker.proteins.fasta.renamed.filtered.fasta
 maker_gff=$INDIR/filtered.genes.renamed.gff3
 
-# Output file paths
 blastp_uniprot_output=$OUTDIR/blastp_uniprot_output.out
 blastp_tair10_output=$OUTDIR/blastp_tair10_output.out
 
