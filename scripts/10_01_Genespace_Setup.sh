@@ -8,6 +8,7 @@
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 
+# This script was coded and shared by Luis Ansorge (Github: luisansorge)
 
 # Paths and Variables:
 WORKDIR=/data/users/jimhof/Organization_and_annotation_of_Eukaryotic_Genomes
