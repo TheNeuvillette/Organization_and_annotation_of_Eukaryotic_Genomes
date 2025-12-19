@@ -57,7 +57,7 @@ The workflow uses PacBio HiFi reads from accession Etna-2 for de novo genome ass
 
 # Dependencies
 
-## Software, Tools
+### Software, Tools
 
 - TE Annotation and Classification: EDTA (version 2.2), TEsorter (version 1.3.0), R (version 4.4.1), Samtools (version 1.19), SeqKit (version 2.6.1), BioPerl (version 1.7.8)
 - Annotation of Genes with the MAKER Pipeline: MAKER (version 3.01.03), OpenMPI (version 4.1.1), Augustus (version 3.4.0), UCSC-Utils (version 448-foss-2021a), MariaDB (version 10.6.4), InterProScan (version 5.70-102.0), BUSCO (version 5.4.2), AGAT (version 1.5.1)
