@@ -15,18 +15,21 @@ OUTDIR=$WORKDIR/results/08_Quality_Assessment_of_Gene_Annotations
 PROTEIN_DIR=$OUTDIR/busco_output_proteins
 TRANSCRIPTOME_DIR=$OUTDIR/busco_output_transcripts
 
-# Create output directory:
-mkdir -p "$OUTDIR"
-cd "$OUTDIR"
-
+# Load the BUSCO module:
 module load BUSCO/5.4.2-foss-2021a
 
-# Generate individual plots 
+# Create output and combined summary directory:
+mkdir -p "$OUTDIR"
+mkdir -p combined_summaries
+cd "$OUTDIR"
+
+# Generate individual BUSCO plots 
 generate_plot.py -wd $PROTEIN_DIR
 generate_plot.py -wd $TRANSCRIPTOME_DIR
 
-# Generate combined plot
-mkdir -p combined_summaries
+# Copy the annotation files into the combined summary directory:
 cp $PROTEIN_DIR/short_summary*.txt combined_summaries/
 cp $TRANSCRIPTOME_DIR/short_summary*.txt combined_summaries/
+
+# Generate combined BUSCO plot
 generate_plot.py -wd combined_summaries/
