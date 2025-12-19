@@ -13,12 +13,6 @@ gene_annotation_data <- read.table(gene_annotation_file, header = FALSE, sep = "
 # Check the superfamilies present in the GFF3 file, and their counts
 TE_data$V3 %>% table()
 
-# Swap coordinates where end larger than start
-gene_annotation_data <- gene_annotation_data %>%
-  mutate(
-    start = pmin(V4, V5),
-    end   = pmax(V4, V5)
-  )
 
 # custom ideogram data
 ## To make the ideogram data, you need to know the lengths of the scaffolds.
