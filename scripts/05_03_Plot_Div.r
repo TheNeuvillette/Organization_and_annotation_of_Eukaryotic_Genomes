@@ -6,7 +6,7 @@ library(data.table)
 
 # get data from parameter
 
-data <- "assembly.fasta.mod.EDTA.anno/assembly.fasta.mod.out.landscape.Div.Rname.tab"
+data <- "Hifiasm.bp.p_ctg.fa.mod.out.landscape.Div.Rname.tab"
 
 rep_table <- fread(data, header = FALSE, sep = "\t")
 rep_table %>% head()
@@ -35,7 +35,8 @@ rep_table.m$fam <- factor(rep_table.m$fam, levels = c(
 rep_table.m$distance <- as.numeric(rep_table.m$variable) / 100 # as it is percent divergence
 
 # Question:
-# rep_table.m$age <- ??? # Calculate using the substitution rate and the formula provided in the tutorial
+# The insertion time (T) can be calculated using the formula T = K/2r formula, where K is the sequence divergence, and r is the substitution rate.
+rep_table.m$age <- rep_table.m$distance/(2*8.22*10^-9)/10^6 # Calculate using the substitution rate and the formula provided in the tutorial
 
 
 # options(scipen = 999)
@@ -43,11 +44,11 @@ rep_table.m$distance <- as.numeric(rep_table.m$variable) / 100 # as it is percen
 # remove helitrons as EDTA is not able to annotate them properly (https://github.com/oushujun/EDTA/wiki/Making-sense-of-EDTA-usage-and-outputs---Q&A)
 rep_table.m <- rep_table.m %>% filter(fam != "DNA/Helitron")
 
-ggplot(rep_table.m, aes(fill = fam, x = distance, weight = value / 1000000)) +
+ggplot(rep_table.m, aes(fill = fam, x = age, weight = value / 1000000)) +
   geom_bar() +
   cowplot::theme_cowplot() +
   scale_fill_brewer(palette = "Paired") +
-  xlab("Distance") +
+  xlab("Age of insertion (Mio. years)") +
   ylab("Sequence (Mbp)") +
   theme(axis.text.x = element_text(angle = 90, vjust = 1, size = 9, hjust = 1), plot.title = element_text(hjust = 0.5))
 
